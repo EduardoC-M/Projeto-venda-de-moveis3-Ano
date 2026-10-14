@@ -1,0 +1,149 @@
+/* Estilos Gerais (Etapa 4a) */
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo de Tabela (Etapa 4a) */
+table {
+    width: 100%;
+    border: 1px solid #ccc; /* Linha mais suave */
+    border-collapse: collapse; 
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid white;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Linha de célula suave */
+}
+
+tr:nth-child(even) {
+    background-color: #e9ecef; /* Zebra striping */
+}
+
+tr:hover {
+    background-color: #adb5bd; /* Novo hover */
+    color: #333; /* Cor do texto mantida legível */
+}
+
+/* Estilo de Links/Botões */
+a, button, input[type="submit"] {
+    text-decoration: none;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+a:hover, button:hover {
+    background-color: #218838;
+}
+
+/* Estilo de Formulários */
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"], form input[type="number"], form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsividade (Etapa 4b) */
+@media (max-width: 600px) {
+    /* Ocultar a tabela e mostrar cada item separadamente ou ajustar */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Oculta o cabeçalho da tabela */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    td:before {
+        /* Cria 'cabeçalhos' para as células */
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #007bff;
+    }
+    
+    /* Mapeamento de 'cabeçalhos' para responsividade */
+    td:nth-of-type(1):before { content: "#"; }
+    td:nth-of-type(2):before { content: "Nome:"; }
+    td:nth-of-type(3):before { content: "Valor:"; }
+    td:nth-of-type(4):before { content: "Quantidade:"; }
+    /* Ações */
+    td:nth-of-type(5):before { content: "Deletar:"; }
+    td:nth-of-type(6):before { content: "Alterar:"; }
+    td:nth-of-type(7):before { content: "Ver:"; }
+}
+
+/* Estilo específico para o container de Login */
+.container-login {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.erro {
+    color: red;
+    font-weight: bold;
+}
